@@ -1,8 +1,7 @@
 "use client";
-export const dynamic = "force-dynamic";
 
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,33 +19,33 @@ export default function SignInPage() {
   const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  // Get origin safely (client-side only)
   const [origin, setOrigin] = useState("");
+  const [referralCode, setReferralCode] = useState<string | null>(null);
+  const router = useRouter();
 
-  // Get referral code from URL
-  const referralCode = searchParams.get("ref");
-
-  // Store referral code if present in URL
+  // Get referral code from URL on client side
   useEffect(() => {
-    if (referralCode) {
-      storeReferralCode(referralCode);
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const refCode = urlParams.get("ref");
+      setReferralCode(refCode);
+
+      // Set origin
+      setOrigin(window.location.origin);
+
+      // Store referral code if present
+      if (refCode) {
+        storeReferralCode(refCode);
+      }
     }
-  }, [referralCode]);
+  }, []);
 
   // Check if user is already logged in
   useEffect(() => {
-    checkUserSession(router);
-  }, [router]);
-
-  // Set origin after component mounts (client-side only)
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setOrigin(window.location.origin);
+    if (origin) {
+      checkUserSession(router);
     }
-  }, []);
+  }, [router, origin]);
 
   // Handle email/password login
   const handleSignIn = async (e: React.FormEvent) => {
@@ -77,6 +76,8 @@ export default function SignInPage() {
 
   // Handle Google Auth
   const handleGoogleAuth = async () => {
+    if (!origin) return;
+
     setGoogleLoading(true);
     setError("");
     setSuccessMessage("");
@@ -154,7 +155,7 @@ export default function SignInPage() {
   };
 
   // Don't render the form until origin is available
-  if (!origin && typeof window !== "undefined") {
+  if (!origin) {
     return (
       <div className="min-h-screen bg-linear-to-br from-purple-50 to-white flex items-center justify-center">
         <div className="text-center">
