@@ -109,7 +109,7 @@ export default function RedeemRewards() {
         Redeem Your Points
       </h2>
 
-      {/* --- Tabs --- */}
+      {/* Tabs */}
       <div className="flex flex-wrap gap-4 mb-10">
         {updatedTabs.map((tab) => (
           <button
@@ -134,7 +134,7 @@ export default function RedeemRewards() {
         ))}
       </div>
 
-      {/* --- Reward Cards Grid --- */}
+      {/* Reward Cards Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {filteredRewards.map((reward, index) => (
           <RewardCard key={index} {...reward} />
@@ -164,19 +164,17 @@ function RewardCard({ title, desc, points, stat, icon }: RewardCardProps) {
   const isUnlocked = stat === "Unlocked";
 
   return (
-    <div className="bg-white rounded-[24px] border border-slate-100 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-mt-0.5 hover:mb-0.5">
+    <div className="bg-white rounded-3xl border border-slate-100 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-mt-0.5 hover:mb-0.5">
       {/* Icon Box */}
       <div className="w-12 h-12 rounded-xl bg-[#f3e2ff]  flex items-center justify-center text-[#a800ff] text-2xl mb-4">
         {icon}
       </div>
 
-      <h3 className="text-[17px] font-semibold text-gray-500 mb-1 leading-tight min-h-[42px] flex items-center">
+      <h3 className="text-[17px] font-semibold text-gray-500 mb-1 leading-tight min-h-10.5 flex items-center">
         {title}
       </h3>
 
-      <p className="text-gray-500 text-[13px] leading-relaxed flex-grow">
-        {desc}
-      </p>
+      <p className="text-gray-500 text-[13px] leading-relaxed grow">{desc}</p>
 
       <div className="flex items-center gap-1.5 text-[#a800ff] font-semibold text-[15px] mb-4">
         <FaStar color="#FF9800" />

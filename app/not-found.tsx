@@ -24,7 +24,7 @@ export default function NotFound() {
   }, [countdown]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50 flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-purple-50 via-white to-blue-50 flex flex-col items-center justify-center p-6 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -52,9 +52,9 @@ export default function NotFound() {
             {/* Left: Illustration and Error Code */}
             <div className="lg:w-2/5 text-center lg:text-left">
               <div className="relative inline-block mb-8">
-                <div className="w-64 h-64 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center">
-                  <div className="w-48 h-48 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full flex items-center justify-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center">
+                <div className="w-64 h-64 bg-linear-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center">
+                  <div className="w-48 h-48 bg-linear-to-br from-purple-200 to-pink-200 rounded-full flex items-center justify-center">
+                    <div className="w-32 h-32 bg-linear-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center">
                       <FaExclamationTriangle className="text-6xl text-purple-600" />
                     </div>
                   </div>
@@ -73,7 +73,7 @@ export default function NotFound() {
               </div>
 
               <div className="text-center">
-                <h1 className="text-7xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-4">
+                <h1 className="text-7xl md:text-8xl font-black text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-pink-600 mb-4">
                   404
                 </h1>
                 <p className="text-sm font-semibold text-purple-600 uppercase tracking-wider">
@@ -111,7 +111,7 @@ export default function NotFound() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                 <Link
                   href="/"
-                  className="group bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 rounded-xl font-semibold flex items-center justify-center gap-3 hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-lg shadow-purple-200"
+                  className="group bg-linear-to-r from-purple-600 to-purple-700 text-white p-4 rounded-xl font-semibold flex items-center justify-center gap-3 hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-lg shadow-purple-200"
                 >
                   <FaHome className="text-xl" />
                   Back to Home

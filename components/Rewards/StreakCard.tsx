@@ -195,12 +195,12 @@ export default function StreakCard() {
                   className={`w-11 h-11 flex items-center justify-center rounded-full text-sm font-bold m-0.5 relative
                     ${
                       isToday
-                        ? "border-[3px] border-[#a800ff] outline outline-2 outline-white -outline-offset-4"
+                        ? "border-[3px] border-[#a800ff] outline outline-white -outline-offset-4"
                         : ""
                     }
                     ${
                       isClaimed
-                        ? "bg-gradient-to-br from-purple-500 to-purple-600 text-white"
+                        ? "bg-linear-to-br from-purple-500 to-purple-600 text-white"
                         : "bg-gray-200 text-[#64748b]"
                     }
                   `}
@@ -232,11 +232,11 @@ export default function StreakCard() {
       {showCongratsPopup && (
         <>
           <div
-            className="fixed inset-0 bg-black/60 z-[60] backdrop-blur-sm animate-in fade-in duration-300"
+            className="fixed inset-0 bg-black/60 z-60 backdrop-blur-sm animate-in fade-in duration-300"
             onClick={closeCongratsPopup}
           />
 
-          <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none">
+          <div className="fixed inset-0 z-70 flex items-center justify-center p-4 pointer-events-none">
             <div className="bg-white rounded-lg shadow-2xl max-w-sm w-full p-10 px-4 pt-14 text-center relative animate-in zoom-in duration-300 pointer-events-auto">
               <button
                 onClick={closeCongratsPopup}
@@ -247,10 +247,7 @@ export default function StreakCard() {
 
               {/* Green Checkmark Circle */}
               <div className="relative mb-2 flex justify-center">
-                <FiCheckCircle
-                  size={90}
-                  className="text-[#22c55e] stroke-[2]"
-                />
+                <FiCheckCircle size={90} className="text-[#22c55e] stroke-2" />
               </div>
 
               {/* Level Up! Section */}
@@ -258,8 +255,8 @@ export default function StreakCard() {
                 Level Up! <span className="text-[18px]">🎉</span>
               </h2>
 
-              {/* Gradient Points Text */}
-              <div className="text-[32px] font-black bg-gradient-to-r from-[#a800ff] to-[#ff5db1] bg-clip-text text-transparent mb-4">
+              {/* linear Points Text */}
+              <div className="text-[32px] font-black bg-linear-to-r from-[#a800ff] to-[#ff5db1] bg-clip-text text-transparent mb-4">
                 +5 Points
               </div>
 

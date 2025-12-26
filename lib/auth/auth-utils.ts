@@ -1,4 +1,3 @@
-// /lib/auth/auth-utils.ts
 import { supabase } from "@/lib/supabase";
 
 // Constants for localStorage keys

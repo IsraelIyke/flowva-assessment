@@ -1,4 +1,3 @@
-// @/lib/notifications.ts
 import { supabase } from "@/lib/supabase";
 import { Notification } from "@/stores/notificationsStore";
 

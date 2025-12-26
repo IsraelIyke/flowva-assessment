@@ -13,7 +13,7 @@ export default function EarnMoreSection() {
     <div className="w-full mx-auto font-sans relative">
       {/* Section Header */}
       <div className="flex items-center gap-4 mb-8">
-        <div className="w-[5px] h-9 bg-[#a800ff] rounded-full" />
+        <div className="w-1.25 h-9 bg-[#a800ff] rounded-full" />
         <h2 className="text-[25px] font-semibold text-[#111827]">
           Earn More Points
         </h2>
@@ -22,9 +22,9 @@ export default function EarnMoreSection() {
       {/* Grid for Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Card 1: Referral Card */}
-        <div className="bg-white rounded-[24px] border border-slate-200 hover:border-purple-700 hover:shadow-2xl overflow-hidden flex flex-col transition-all duration-1300 ease-out">
+        <div className="bg-white rounded-3xl border border-slate-200 hover:border-purple-700 hover:shadow-2xl overflow-hidden flex flex-col transition-all duration-1300 ease-out">
           <div className="p-4 flex items-center gap-4">
-            <div className="w-10 h-10 rounded-xl bg-[#f5ebff] flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#f5ebff] flex items-center justify-center shrink-0">
               <LuStar className="text-[#a800ff] text-xl" />
             </div>
             <h3 className="text-[14px] font-semibold text-slate-800 leading-tight">
@@ -43,9 +43,9 @@ export default function EarnMoreSection() {
         </div>
 
         {/* Card 2: Share Card */}
-        <div className="bg-white rounded-[24px] border border-slate-200 hover:border-purple-700 hover:shadow-2xl overflow-hidden flex flex-col transition-all duration-1300 ease-out">
+        <div className="bg-white rounded-3xl border border-slate-200 hover:border-purple-700 hover:shadow-2xl overflow-hidden flex flex-col transition-all duration-1300 ease-out">
           <div className="p-4 flex items-center gap-4">
-            <div className="w-10 h-10 rounded-xl bg-[#f5ebff] flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#f5ebff] flex items-center justify-center shrink-0">
               <LuShare2 className="text-[#a800ff] text-xl" />
             </div>
             <div>
@@ -80,12 +80,12 @@ export default function EarnMoreSection() {
         <>
           {/* Dark Overlay */}
           <div
-            className="fixed inset-0 bg-black/60 z-[60] backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-black/60 z-60 backdrop-blur-sm transition-opacity"
             onClick={toggleModal}
           />
 
           {/* Popup Container */}
-          <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none">
+          <div className="fixed inset-0 z-70 flex items-center justify-center p-4 pointer-events-none">
             <div className="bg-white rounded-lg p-8 shadow-2xl relative text-center">
               {/* Close Button */}
               <button

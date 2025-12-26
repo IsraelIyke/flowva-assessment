@@ -171,7 +171,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             onClick={toggleLogoutPopup}
             className="flex items-center gap-3 p-3 px-4 rounded-lg cursor-pointer hover:bg-purple-50 transition-colors group relative"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center font-semibold text-purple-600 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-full bg-linear-to-br from-purple-100 to-purple-200 flex items-center justify-center font-semibold text-purple-600 group-hover:scale-105 transition-transform">
               {getUserInitial()}
             </div>
             <div className="text-sm flex-1">
@@ -222,7 +222,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 </button>
                 <button
                   onClick={handleLogout}
-                  className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-3.5 rounded-xl font-semibold flex items-center justify-center gap-3 hover:from-red-600 hover:to-red-700 transition-all duration-200"
+                  className="w-full bg-linear-to-r from-red-500 to-red-600 text-white py-3.5 rounded-xl font-semibold flex items-center justify-center gap-3 hover:from-red-600 hover:to-red-700 transition-all duration-200"
                 >
                   <FiLogOut className="text-lg" />
                   Log Out

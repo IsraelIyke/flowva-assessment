@@ -96,7 +96,7 @@ export default function PointsCard({ targetPoints = 5000 }: PointsCardProps) {
             </h1>
           </div>
 
-          {/* Gold Star Coin Icon - key prop re-triggers animation */}
+          {/* Gold Star Coin Icon and the key prop re triggers animation */}
           <GoldenStarCoin
             key={flipTrigger}
             size={46}

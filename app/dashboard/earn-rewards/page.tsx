@@ -22,21 +22,21 @@ export default function RewardsPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
-  // State to control the full-page loading screen
+  // Keeps the splash screen visible until the initial data or auth check is ready
   const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 
-  // Get notification store
+  // Grab global notification state—essential for showing the red dot on the bell
   const { unreadCount, loading: notificationsLoading } =
     useNotificationsStore();
 
-  // Initialize notifications
+  // Fire up the listeners for real-time alerts and browser-level subscriptions
   useInitializeNotifications();
   useNotificationSubscription();
 
   const notificationRef = useRef<HTMLDivElement>(null);
   const bellButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Simulated Loading Delay (or use your actual data loading status)
+  // Force a brief splash screen moment so the branding has time to appear before the dashboard pops in
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLoadingScreen(false);
@@ -49,10 +49,10 @@ export default function RewardsPage() {
   const toggleNotification = () => setIsNotificationOpen(!isNotificationOpen);
   const closeNotification = () => setIsNotificationOpen(false);
 
-  // --- LOADING SCREEN UI ---
+  // Splash Screen
   if (showLoadingScreen) {
     return (
-      <div className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center">
+      <div className="fixed inset-0 z-100 bg-white flex flex-col items-center justify-center">
         <div className="animate-pulse">
           <Image
             src="/logo/flowva_logo.png"
@@ -65,7 +65,7 @@ export default function RewardsPage() {
     );
   }
 
-  // --- MAIN DASHBOARD UI ---
+  // main dashboard
   return (
     <div className="flex h-screen overflow-hidden">
       <Sidebar

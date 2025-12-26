@@ -29,7 +29,9 @@ export default function ReferCard() {
         if (!user) {
           setUserName("Guest");
           setReferralCode("guest3825");
-          setReferralLink("https://app.flowvahub.com/signup?ref=guest3825");
+          setReferralLink(
+            "https://flowva-assessment.vercel.app/signup?ref=guest3825"
+          );
           setLoading(false);
           return;
         }
@@ -70,7 +72,7 @@ export default function ReferCard() {
                 : "user123";
               setReferralCode(fallbackCode);
               setReferralLink(
-                `https://app.flowvahub.com/signup?ref=${fallbackCode}`
+                `https://flowva-assessment.vercel.app/signup?ref=${fallbackCode}`
               );
             } else {
               // Refetch after creation
@@ -83,7 +85,9 @@ export default function ReferCard() {
               if (newData?.referral_code) {
                 const code = newData.referral_code;
                 setReferralCode(code);
-                setReferralLink(`https://app.flowvahub.com/signup?ref=${code}`);
+                setReferralLink(
+                  `https://flowva-assessment.vercel.app/signup?ref=${code}`
+                );
               }
             }
           } catch (createErr) {
@@ -93,14 +97,16 @@ export default function ReferCard() {
               : "user123";
             setReferralCode(fallbackCode);
             setReferralLink(
-              `https://app.flowvahub.com/signup?ref=${fallbackCode}`
+              `https://flowva-assessment.vercel.app/signup?ref=${fallbackCode}`
             );
           }
         } else if (referralData?.referral_code) {
           // Successfully fetched referral code
           const code = referralData.referral_code;
           setReferralCode(code);
-          setReferralLink(`https://app.flowvahub.com/signup?ref=${code}`);
+          setReferralLink(
+            `https://flowva-assessment.vercel.app/signup?ref=${code}`
+          );
         }
 
         // Fetch referral stats (number of users this user referred)
@@ -125,7 +131,9 @@ export default function ReferCard() {
         setError("Failed to load referral data");
         setUserName("Guest");
         setReferralCode("guest3825");
-        setReferralLink("https://app.flowvahub.com/signup?ref=guest3825");
+        setReferralLink(
+          "https://flowva-assessment.vercel.app/signup?ref=guest3825"
+        );
         setLoading(false);
       }
     };
@@ -167,7 +175,7 @@ export default function ReferCard() {
     return (
       <div className="w-full mx-auto font-sans mt-4">
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-[5px] h-9 bg-[#a800ff] rounded-full" />
+          <div className="w-1.25 h-9 bg-[#a800ff] rounded-full" />
           <h2 className="text-[25px] font-semibold text-[#111827]">
             Refer & Earn
           </h2>
@@ -193,7 +201,7 @@ export default function ReferCard() {
       )}
 
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-[5px] h-9 bg-[#a800ff] rounded-full" />
+        <div className="w-1.25 h-9 bg-[#a800ff] rounded-full" />
         <h2 className="text-[25px] font-semibold text-[#111827]">
           Refer & Earn
         </h2>
@@ -233,7 +241,7 @@ export default function ReferCard() {
 
         {/* Link Area */}
         <div className="px-8 pb-8">
-          <div className="bg-[#fdfaff] rounded-[24px] p-4">
+          <div className="bg-[#fdfaff] rounded-3xl p-4">
             <div className="flex items-center justify-between mb-4">
               <label className="text-slate-500 text-[15px] font-medium">
                 Your personal referral link:

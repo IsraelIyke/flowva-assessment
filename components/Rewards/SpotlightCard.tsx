@@ -6,8 +6,8 @@ export default function SpotlightCard() {
   return (
     // Main card container with shadow and rounded corners
     <div className="w-full bg-white rounded-2xl shadow-xl hover:shadow-2xl  overflow-hidden font-sans leading-snug transition-all duration-600 ease-out hover:-translate-y-1">
-      {/* === HEADER SECTION (Gradient Background) === */}
-      <div className="relative bg-[linear-gradient(135deg,#9013FE_0%,#70D6FF_100%)] p-4 text-white h-35 flex flex-col justify-center">
+      {/* HEADER SECTION (Linear Background) */}
+      <div className="relative bg-[linear-Linear(135deg,#9013FE_0%,#70D6FF_100%)] p-4 text-white h-35 flex flex-col justify-center">
         {/* Featured Badge */}
         <div className="absolute top-4">
           <span className="bg-white/25 backdrop-blur-sm text-xs font-bold px-4 py-1.5 rounded-full">
@@ -31,7 +31,7 @@ export default function SpotlightCard() {
         </div>
       </div>
 
-      {/* === BODY SECTION (White Background) === */}
+      {/* BODY SECTION (White Background) */}
       <div className="p-2 pt-4 px-4 bg-white">
         {/* Content Area with Icon and Text */}
         <div className="flex items-start space-x-5">
@@ -53,7 +53,7 @@ export default function SpotlightCard() {
           </div>
         </div>
 
-        {/* === BUTTONS SECTION === */}
+        {/* BUTTONS SECTION */}
         <div className="mt-8 flex justify-between gap-5">
           {/* Sign up Button (Solid Purple) */}
           <button className=" flex items-center justify-center gap-2 bg-[#9f25ea] hover:bg-[#8a1ed0] transition-colors text-white font-bold text-sm py-1 px-4 rounded-full h-10 w-fit">
@@ -61,8 +61,8 @@ export default function SpotlightCard() {
             Sign up
           </button>
 
-          {/* Claim points Button (Gradient Pink/Purple) */}
-          <button className=" flex items-center justify-center gap-2 bg-gradient-to-r from-[#d123e1] to-[#f75f7d] hover:opacity-90 transition-opacity text-white font-bold text-sm py-1 px-4 rounded-full  h-10 w-fit">
+          {/* Claim points Button (Linear Pink/Purple) */}
+          <button className=" flex items-center justify-center gap-2 bg-Linear-to-r from-[#d123e1] to-[#f75f7d] hover:opacity-90 transition-opacity text-white font-bold text-sm py-1 px-4 rounded-full  h-10 w-fit">
             <FaGift />
             Claim 50 pts
           </button>

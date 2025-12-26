@@ -198,8 +198,8 @@ export default function NotificationCard() {
   // Loading State
   if (loading && notifications.length === 0) {
     return (
-      <div className="absolute right-0 w-[380px] bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden z-100">
-        <div className="bg-gradient-to-r from-[#a800ff] to-[#ff5db1] p-5 px-6">
+      <div className="absolute right-0 w-95 bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden z-100">
+        <div className="bg-linear-to-r from-[#a800ff] to-[#ff5db1] p-5 px-6">
           <h3 className="text-white text-l font-bold">Notifications</h3>
         </div>
         <div className="p-4">
@@ -221,8 +221,8 @@ export default function NotificationCard() {
   return (
     <>
       <div className="absolute right-0 w-80 md:w-95 bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden z-50 animate-in fade-in zoom-in duration-200 origin-top-right">
-        {/* Header with Gradient */}
-        <div className="bg-gradient-to-r from-[#a800ff] to-[#ff5db1] p-5 px-6 flex items-center justify-between">
+        {/* Header with linear */}
+        <div className="bg-linear-to-r from-[#a800ff] to-[#ff5db1] p-5 px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h3 className="text-white text-l font-bold">Notifications</h3>
             {unreadCount > 0 && (
@@ -256,7 +256,7 @@ export default function NotificationCard() {
         </div>
 
         {/* Notification List */}
-        <div className="max-h-[400px] overflow-y-auto">
+        <div className="max-h-100 overflow-y-auto">
           {visibleNotifications.length === 0 ? (
             <div className="p-8 text-center">
               <div className="w-16 h-16 mx-auto mb-4 text-gray-300">
@@ -455,12 +455,12 @@ export default function NotificationCard() {
       {/* Delete All Warning Popup */}
       {showDeleteWarning && (
         <>
-          <div className="fixed inset-0 bg-black/50 z-[65] backdrop-blur-sm animate-in fade-in duration-200" />
+          <div className="fixed inset-0 bg-black/50 z-65 backdrop-blur-sm animate-in fade-in duration-200" />
 
-          <div className="fixed inset-0 z-[70] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-70 flex items-center justify-center p-4">
             <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full overflow-hidden animate-in zoom-in duration-200">
               {/* Warning Header */}
-              <div className="bg-gradient-to-r from-red-500 to-red-600 p-5 px-6">
+              <div className="bg-linear-to-r from-red-500 to-red-600 p-5 px-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                     <FiAlertTriangle className="text-white" size={20} />
@@ -509,7 +509,7 @@ export default function NotificationCard() {
                 </button>
                 <button
                   onClick={confirmDeleteAll}
-                  className="px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg text-sm font-medium hover:from-red-600 hover:to-red-700 transition-all"
+                  className="px-4 py-2 bg-linear-to-r from-red-500 to-red-600 text-white rounded-lg text-sm font-medium hover:from-red-600 hover:to-red-700 transition-all"
                 >
                   Delete All
                 </button>
