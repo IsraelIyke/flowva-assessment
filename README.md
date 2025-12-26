@@ -68,8 +68,6 @@ lib/
 ├─ rewards.ts # Rewards queries
 └─ notifications.ts
 ```
-```
-```
 ## 🔐 Environment Setup
 ````
 Create a `.env.local` file in the root directory:
