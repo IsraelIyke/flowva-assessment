@@ -1,5 +1,4 @@
 "use client";
-export const dynamic = "force-dynamic";
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -25,6 +24,9 @@ export default function SignUpPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  // Get origin safely (client-side only)
+  const [origin, setOrigin] = useState("");
+
   // Get referral code from URL
   const referralCode = searchParams.get("ref");
 
@@ -39,6 +41,13 @@ export default function SignUpPage() {
   useEffect(() => {
     checkUserSession(router);
   }, [router]);
+
+  // Set origin after component mounts (client-side only)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setOrigin(window.location.origin);
+    }
+  }, []);
 
   // Handle email/password signup
   const handleSignUp = async (e: React.FormEvent) => {
@@ -73,7 +82,7 @@ export default function SignUpPage() {
         password,
         options: {
           data: userMetadata,
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          emailRedirectTo: `${origin}/auth/callback`,
         },
       });
 
@@ -122,7 +131,7 @@ export default function SignUpPage() {
     setSuccessMessage("");
 
     try {
-      const redirectTo = `${window.location.origin}/auth/callback`;
+      const redirectTo = `${origin}/auth/callback`;
 
       // Store referral code in localStorage for OAuth callback
       if (referralCode) {
@@ -142,6 +151,18 @@ export default function SignUpPage() {
       setGoogleLoading(false);
     }
   };
+
+  // Don't render the form until origin is available
+  if (!origin && typeof window !== "undefined") {
+    return (
+      <div className="min-h-screen bg-linear-to-br from-purple-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-linear-to-br from-purple-50 to-white flex flex-col items-center justify-center p-4">
