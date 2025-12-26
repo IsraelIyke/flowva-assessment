@@ -13,8 +13,8 @@ The goal of this implementation is to closely match the original UI and behavior
 ## 🔗 Live Demo
 
 👉 **Live URL:** https://flowva-assessment.vercel.app   
-👉 **GitHub Repository:** https://github.com/IsraelIyke/flowva_assessment   
-👉 **Screenshots:** https://github.com/IsraelIyke/flowva_assessment/tree/main/screenshots
+👉 **GitHub Repository:** https://github.com/IsraelIyke/flowva-assessment   
+👉 **Screenshots:** https://github.com/IsraelIyke/flowva-assessment/tree/main/screenshots
 
 ---
 
