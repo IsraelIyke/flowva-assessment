@@ -61,7 +61,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     getUserData();
   }, []);
 
-  // Close popup when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
