@@ -14,7 +14,7 @@ The goal of this implementation is to closely match the original UI and behavior
 
 👉 **Live URL:** https://flowva-assessment.vercel.app   
 👉 **GitHub Repository:** https://github.com/IsraelIyke/flowva_assessment   
-👉 **Screenshots:** https://github.com/IsraelIyke/flowva_assessment/screenshots
+👉 **Screenshots:** https://github.com/IsraelIyke/flowva_assessment/tree/main/screenshots
 
 ---
 
