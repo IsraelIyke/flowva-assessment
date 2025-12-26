@@ -16,6 +16,7 @@ The goal of this implementation is to closely match the original UI and behavior
 👉 **GitHub Repository:** https://github.com/IsraelIyke/flowva-assessment   
 👉 **Screenshots:** https://github.com/IsraelIyke/flowva-assessment/tree/main/screenshots
 
+Note: All debug console.logs are still in place and supabase API queries are yet to be moved to the project's API route
 ---
 
 ## 🎯 Scope of Implementation
