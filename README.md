@@ -1,4 +1,7 @@
-```md
+<p align="center">
+  <img src="screenshots/referral.png" alt="Project Screenshot" width="600" />
+</p>
+
 # Rewards Page – React + Supabase Technical Assessment
 
 This project is a recreation of the **Rewards page** on [FlowvaHub](https://www.flowvahub.com), built as part of a React Full-Stack technical assessment.
@@ -9,8 +12,8 @@ The goal of this implementation is to closely match the original UI and behavior
 
 ## 🔗 Live Demo
 
-👉 **Live URL:** https://flowva-assessment.vercel.app  
-👉 **GitHub Repository:** https://github.com/IsraelIyke/flowva_assessment
+👉 **Live URL:** https://flowva-assessment.vercel.app   
+👉 **GitHub Repository:** https://github.com/IsraelIyke/flowva_assessment   
 👉 **Screenshots:** https://github.com/IsraelIyke/flowva_assessment/screenshots
 
 ---
@@ -45,7 +48,6 @@ Supabase is used directly for:
 
 ## 📁 Project Structure
 ```
-
 app/
 ├─ auth/ # Authentication routes
 ├─ dashboard/ # Rewards page & related UI
@@ -65,19 +67,15 @@ lib/
 ├─ supabase.ts # Supabase client
 ├─ rewards.ts # Rewards queries
 └─ notifications.ts
-
-````
-
----
-
+```
+```
+```
 ## 🔐 Environment Setup
-
+````
 Create a `.env.local` file in the root directory:
 
-```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ````
 
 Ensure the following redirect URL is added in Supabase Auth settings:
