@@ -13,12 +13,20 @@ export default function ForgotPasswordPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [origin, setOrigin] = useState("");
   const router = useRouter();
 
   // Check if user is already logged in
   useEffect(() => {
     checkUserSession(router);
   }, [router]);
+
+  // Set origin after component mounts (client-side only)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setOrigin(window.location.origin);
+    }
+  }, []);
 
   // Handle forgot password request
   const handleForgotPassword = async (e: React.FormEvent) => {
@@ -29,7 +37,7 @@ export default function ForgotPasswordPage() {
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/reset-password`,
+        redirectTo: `${origin}/reset-password`,
       });
 
       if (error) throw error;
@@ -43,6 +51,18 @@ export default function ForgotPasswordPage() {
       setLoading(false);
     }
   };
+
+  // Don't render the form until origin is available
+  if (!origin && typeof window !== "undefined") {
+    return (
+      <div className="min-h-screen bg-linear-to-br from-purple-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-linear-to-br from-purple-50 to-white flex flex-col items-center justify-center p-4">

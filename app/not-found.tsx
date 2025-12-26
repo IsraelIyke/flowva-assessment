@@ -14,14 +14,6 @@ export default function NotFound() {
   const [countdown, setCountdown] = useState(10);
 
   // Countdown timer for automatic redirect
-  useEffect(() => {
-    if (countdown > 0) {
-      const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
-      return () => clearTimeout(timer);
-    } else {
-      window.location.href = "/";
-    }
-  }, [countdown]);
 
   return (
     <div className="min-h-screen bg-linear-to-br from-purple-50 via-white to-blue-50 flex flex-col items-center justify-center p-6 relative overflow-hidden">
@@ -93,20 +85,6 @@ export default function NotFound() {
                 digital void. Don't worry, you can still earn amazing rewards!
               </p>
 
-              <div className="mb-8 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                <div className="flex items-center gap-3 text-purple-700 mb-2">
-                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-bold">!</span>
-                  </div>
-                  <p className="font-semibold">
-                    Redirecting in {countdown} seconds
-                  </p>
-                </div>
-                <p className="text-purple-600 text-sm">
-                  You'll be automatically taken back to the home page.
-                </p>
-              </div>
-
               {/* Action Buttons */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                 <Link
@@ -117,14 +95,6 @@ export default function NotFound() {
                   Back to Home
                   <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
                 </Link>
-
-                <button
-                  onClick={() => window.history.back()}
-                  className="bg-white text-gray-800 p-4 rounded-xl font-semibold flex items-center justify-center gap-3 hover:bg-gray-50 transition-all duration-200 border-2 border-gray-200"
-                >
-                  <FaArrowLeft />
-                  Go Back
-                </button>
               </div>
             </div>
           </div>
