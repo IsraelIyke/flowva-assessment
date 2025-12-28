@@ -225,11 +225,7 @@ export default function NotificationCard() {
         <div className="bg-linear-to-r from-[#a800ff] to-[#ff5db1] p-5 px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h3 className="text-white text-l font-bold">Notifications</h3>
-            {unreadCount > 0 && (
-              <span className="bg-white text-purple-600 text-xs font-bold px-2 py-1 rounded-full">
-                {unreadCount} new
-              </span>
-            )}
+           
           </div>
           <div className="flex gap-4">
             <button
