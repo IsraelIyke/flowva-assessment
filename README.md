@@ -126,7 +126,3 @@ The app will be available at `http://localhost:3000`.
 ---
 
 Thank you for reviewing this submission.
-
-```
-
-```
