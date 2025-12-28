@@ -7,7 +7,7 @@ export default function SpotlightCard() {
     // Main card container with shadow and rounded corners
     <div className="w-full bg-white rounded-2xl shadow-xl hover:shadow-2xl  overflow-hidden font-sans leading-snug transition-all duration-600 ease-out hover:-translate-y-1">
       {/* HEADER SECTION (Linear Background) */}
-      <div className="relative bg-[linear-Linear(135deg,#9013FE_0%,#70D6FF_100%)] p-4 text-white h-35 flex flex-col justify-center">
+      <div className="relative bg-[linear-gradient(135deg,#9013FE_0%,#70D6FF_100%)] p-4 text-white h-35 flex flex-col justify-center">
         {/* Featured Badge */}
         <div className="absolute top-4">
           <span className="bg-white/25 backdrop-blur-sm text-xs font-bold px-4 py-1.5 rounded-full">
