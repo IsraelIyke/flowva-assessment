@@ -1,17 +1,17 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Sidebar from "@/components/Sidebar";
-import PointsCard from "@/components/Rewards/PointsCard";
-import StreakCard from "@/components/Rewards/StreakCard";
-import SpotlightCard from "@/components/Rewards/SpotlightCard";
-import EarnMoreCard from "@/components/Rewards/EarnMoreCard";
-import ReferCard from "@/components/Rewards/ReferCard";
-import RedeemRewards from "@/components/Rewards/RedeemRewards";
+import Sidebar from "@/app/components/Sidebar";
+import PointsCard from "@/app/components/Rewards/PointsCard";
+import StreakCard from "@/app/components/Rewards/StreakCard";
+import SpotlightCard from "@/app/components/Rewards/SpotlightCard";
+import EarnMoreCard from "@/app/components/Rewards/EarnMoreCard";
+import ReferCard from "@/app/components/Rewards/ReferCard";
+import RedeemRewards from "@/app/components/Rewards/RedeemRewards";
 import { FaBell } from "react-icons/fa";
 import { BiMenu } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
-import NotificationCard from "@/components/Notifications";
+import NotificationCard from "@/app/components/Notifications";
 import { useNotificationSubscription } from "@/hooks/useNotificationSubscription";
 import { useNotificationsStore } from "@/stores/notificationsStore";
 import { useInitializeNotifications } from "@/hooks/useInitializeNotifications";
